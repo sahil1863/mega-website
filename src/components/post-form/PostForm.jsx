@@ -40,10 +40,9 @@ export default function PostForm({ post }) {
             if (file) {
                 // const fileId = file.$id;
                 // data.featuredImage = fileId;
-                // const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
                 console.log(data)
+                // const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
                 const dbPost = await appwriteService.createPost({
-
                     title:data.title,
                     slug:data.slug,
                     content:data.content,
