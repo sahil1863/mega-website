@@ -1,38 +1,30 @@
 import React from "react";
-
+import appwriteService from "../appwrite/config"
 export default function Contact() {
   const [result, setResult] = React.useState("");
-  const [c, sett] = React.useState(false);
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "f72057bf-c6d3-4277-aeb4-0341e3f22871");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Submitted Successfully! Thank you for your feedback.");
-      sett(true);
-      event.target.reset();} else {
-      console.error("Error", data);
-      setResult(data.message);
-    }
-  };
-
+  const [n, setn] = React.useState("");
+const formSubmit=(e)=>{
+  e.preventDefault()
+  setResult("Sending....");
+  // console.log(e.target.name.value)
+  appwriteService.addFeedback({
+    name: e.target.name.value,
+    email: e.target.email.value,
+    message: e.target.message.value
+  });
+  setTimeout(() => {
+    console.log("Hello, World!");
+    e.target.reset();
+    setResult("Submitted Successfully! Thank you for your feedback  ");
+  }, 2000);
+  // console.log(e.target.name.value,e.target.email.value,e.target.message.value);
+}
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#02AABD] to-[#00CEAC] p-6">
       {/* Centered Section - Contact Form */}
       <div className="w-1/3 bg-gradient-to-r from-gray-800 to-black rounded-lg shadow-lg p-8 text-white">
         <h2 className="text-4xl font-sans mb-6 text-center">Share Your Feedback</h2>
-        <form onSubmit={onSubmit} className="space-y-6">
+        <form onSubmit={formSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-white">
               Name
@@ -41,6 +33,9 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
+              onChange={(e)=>{
+                setn(e.target.value);
+              }}
               required
               className="mt-1 block w-full md:w-50 lg:w-70 h-10 bg-gray-800 text-white border-gray-600 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             />
@@ -80,25 +75,8 @@ export default function Contact() {
         </form>
         <div className="block mt-4 text-center">
   {result}
-  {result !==""  && (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width="24"
-    height="24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="feather feather-smile inline-block align-middle ml-2"
-  >
-    <circle cx="12" cy="12" r="10"></circle>
-    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-    <line x1="9" y1="9" x2="9.01" y2="9"></line>
-    <line x1="15" y1="9" x2="15.01" y2="9"></line>
-  </svg>
-)}
+
+  {result =="Submitted Successfully! Thank you for your feedback  "  && (n)}
   
 </div>
 
