@@ -17,6 +17,11 @@ const formSubmit=(e)=>{
     e.target.reset();
     setResult("Submitted Successfully! Thank you for your feedback  ");
   }, 2000);
+  setTimeout(() => {
+    console.log("Hello, World!");
+    e.target.reset();
+    setResult("");
+  }, 12000);
   // console.log(e.target.name.value,e.target.email.value,e.target.message.value);
 }
   return (
