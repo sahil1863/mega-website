@@ -5,7 +5,7 @@ import authService from "./appwrite/auth"
 import {login, logout} from "./store/authSlice"
 import { Footer, Header } from './components'
 import { Outlet } from 'react-router-dom'
-
+import ReactLoading from "react-loading";
 function App() {
   const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
@@ -21,6 +21,7 @@ function App() {
     })
     .finally(() => setLoading(false))
   }, [])
+  // setTimeout/
   
   return !loading ? (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-900 to-black">
@@ -32,7 +33,21 @@ function App() {
         <Footer />
       </div>
     </div>
-  ) : null
+  ) : (
+    <div>
+      <div className="flex items-center justify-center h-screen bg-gray-900">
+        <ReactLoading
+          type={"bars"}
+          color={"#03fc4e"}
+          height={150}
+          width={150}
+        />
+      </div>
+      <div>
+        <p className='text-color-grey'>Loading...</p>
+      </div>  
+    </div>
+  )
 }
 
 export default App
