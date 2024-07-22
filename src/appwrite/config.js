@@ -37,6 +37,7 @@ export class Service{
         }
     }
 
+
     async addFeedback({name,email,message}){
         try {
             return await this.databases.createDocument(
@@ -53,6 +54,9 @@ export class Service{
             console.log("Appwrite serive :: addFeedback :: error", error);
         }
     }
+
+
+    
 
     async updatePost(slug, {title, content, featuredImage, status,author,date,time}){
         try {
