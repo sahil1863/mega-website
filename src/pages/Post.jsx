@@ -4,7 +4,7 @@ import appwriteService from "../appwrite/config";
 import { Button, Container } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
-import { Heart } from "lucide-react";
+import { ThumbsUp , ThumbsDown } from "lucide-react";
 
 export default function Post() {
     const [post, setPost] = useState(null);
@@ -90,10 +90,9 @@ export default function Post() {
                             likePost()
                         }
                     }}>
-                        hello
-                    <Heart className={`${post.likes.includes(userData?.$id)?"fill-red-500 stroke-none ":""}`} /> <p>{post?.likes?.length}</p>
-                    
+                        <ThumbsUp size={30} className={`${post.likes.includes(userData?.$id)?"fill-red-500 stroke-none " : ""}`} /> <p>{post?.likes?.length}</p>
                     </button>
+                   
                 </div>
 
                 
