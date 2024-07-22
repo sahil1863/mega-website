@@ -34,7 +34,7 @@ function App() {
       </div>
     </div>
   ) : (
-    <div>
+    
       <div className="flex items-center justify-center h-screen bg-gray-900">
         <ReactLoading
           type={"bars"}
@@ -43,10 +43,7 @@ function App() {
           width={150}
         />
       </div>
-      <div>
-        <p className='text-color-grey'>Loading...</p>
-      </div>  
-    </div>
+      
   )
 }
 
