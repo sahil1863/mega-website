@@ -81,7 +81,7 @@ export default function Post() {
                         </div>
                     )}
                 </div>
-                
+
                 <div className="">
                     <button className="flex justify-center items-center gap-1" onClick={()=>{
                         if(post.likes.includes(userData?.$id)){
@@ -93,7 +93,6 @@ export default function Post() {
                     <Heart className={`${post.likes.includes(userData?.$id)?"fill-red-500  stroke-none ":""}`} /> <p>{post?.likes?.length}</p>
                     </button>
                 </div>
-
 
                 
                 <div className="w-full mb-6">
