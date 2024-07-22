@@ -66,6 +66,7 @@ function AllPosts() {
                 <div className='flex flex-wrap'>
                     {filteredPosts.map((post) => (
                         <div key={post?.$id} className='p-2 w-1/4'>
+                            {/* console.log(post) */}
                             <PostCard {...post} />
                         </div>
                     ))}
