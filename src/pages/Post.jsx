@@ -91,8 +91,8 @@ export default function Post() {
                         }
                     }}>
                         hello
-                    {/* <Heart className={`${post.likes.includes(userData?.$id)?"fill-red-500  stroke-none ":""}`} /> <p>{post?.likes?.length}</p> */}
-                    <p>{post?.likes?.length}</p>
+                    <Heart className={`${post.likes.includes(userData?.$id)?"fill-red-500 stroke-none ":""}`} /> <p>{post?.likes?.length}</p>
+                    
                     </button>
                 </div>
 
