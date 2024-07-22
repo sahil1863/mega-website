@@ -21,7 +21,7 @@ const formSubmit=(e)=>{
     console.log("Hello, World!");
     e.target.reset();
     setResult("");
-  }, 3000);
+  }, 5000);
   // console.log(e.target.name.value,e.target.email.value,e.target.message.value);
 }
   return (
