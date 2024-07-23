@@ -17,6 +17,15 @@ function Home() {
                         <p className="text-xl mb-12 leading-relaxed animate-fade-in-up">
                             Share your story with the world. Create a beautiful, personalized blog that fits your brand. Grow your audience with built-in marketing tools, or transform your passion into revenue by gating access with a paywall.
                         </p>
+                        <Link to="/signup">
+                            <Button
+                                bgColor="bg-green-500"
+                                textColor="text-white"
+                                className="transition duration-300 transform hover:scale-105 hover:bg-green-600 shadow-lg rounded-full px-8 py-3 animate-fade-in-up"
+                            >
+                                Get Started
+                            </Button>
+                        </Link>
                     </div>
                 </Container>
             </main>

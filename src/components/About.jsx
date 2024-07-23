@@ -29,7 +29,7 @@ const AboutPage = () => {
                         </div>
                         
                         <div className="mt-6 flex justify-center">
-    <div className="max-w-3xl w-full">
+     <div className="max-w-3xl w-full">
         <h3 className="text-xl font-bold mb-2 text-blue-400">Get in Touch</h3>
         <ul className="flex justify-center space-x-4">
             <li>
