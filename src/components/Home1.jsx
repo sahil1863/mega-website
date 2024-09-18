@@ -19,7 +19,7 @@ function Home() {
                             Welcome to Social-Shield
                         </h1>
                         <p className="text-xl mb-12 leading-relaxed animate-fade-in-up">
-                            Detect fake social media accounts with advanced analysis tools. Protect your online presence and ensure authenticity.
+                        Your digital defense against fake identities. Detect fake social media accounts with advanced analysis tools. Protect your online presence and ensure authenticity.
                         </p>
                         <Link to="/signup">
                             <Button

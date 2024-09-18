@@ -10,21 +10,24 @@ const AboutPage = () => {
                     <div className="max-w-3xl mx-auto text-center">
                         <h1 className="text-4xl font-bold mb-8">About</h1>
                         <div className="mb-8">
-                            <h2 className="text-2xl font-bold mb-4 text-blue-400">About the Blog Application</h2>
+                            <h2 className="text-2xl font-bold mb-4 text-blue-400">About the Social_Shield Application</h2>
                             <p className="text-lg mb-4 text-justify">
-                                Our blog application is designed to empower users to share their thoughts, experiences, and expertise through well-crafted blog posts. It provides a user-friendly interface for managing content, ensuring seamless interaction and engagement with readers.
+                            The impact Social Shield has had in improving online security is remarkable. Its real-time detection capabilities have made our work much easier.
                             </p>
                             <p className="text-lg mb-4 text-justify">
-                                Whether you're a seasoned writer, a hobbyist blogger, or someone looking to start sharing your ideas online, our application offers the tools you need to create, edit, and share compelling content.
+                            Social Shield is a game-changer in protecting our digital presence. It helped us detect and remove multiple fake accounts impersonating our organization. The platform is fast, secure, and highly efficient.
                             </p>
                         </div>
                         <div className="mb-8">
-                            <h2 className="text-2xl font-bold mb-4 text-blue-400">About Me</h2>
+                            <h2 className="text-2xl font-bold mb-4 text-blue-400">About Us</h2>
                             <p className="text-lg mb-4 text-justify">
-                                My name is Sahil chhabra, and I'm currently pursuing Computer Science at Delhi Technological University (formerly Delhi College of Engineering). As a pre-final year student, I have a passion for technology and web development.
+                            Social Shield is a cutting-edge government platform developed to detect and combat fake social media accounts across various platforms like Facebook, Instagram, Twitter etc.
+
                             </p>
                             <p className="text-lg mb-4 text-justify">
-                                This blog application is a culmination of my interest in creating meaningful and impactful software solutions. I believe in the power of blogging to share knowledge, connect with others, and contribute to the online community.
+                            Our mission is to safeguard organizations, institutions, and individuals from using fake profiles, ensuring a secure digital environment. Through advanced AI-driven tools and real-time analytics, we identify fraudulent activities, flag fake profiles, and coordinate with social media platforms to ensure their timely removal. 
+
+Social Shield serves as the first line of defense in the fight against cybercrime, protecting the online community from threats and maintaining the integrity of the digital space.
                             </p>
                         </div>
                         

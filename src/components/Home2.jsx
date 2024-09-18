@@ -189,7 +189,7 @@ function Home() {
     },
   };
     return (
-        <div className="bg-gradient-to-b from-gray-800 via-gray-900 to-black min-h-screen text-white flex flex-col items-center">
+        <div className=" min-h-screen text-white flex flex-col items-center bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
             {/* Main content section */}
             <main className="py-20 flex-1 w-full">
                 <Container>
@@ -200,12 +200,12 @@ function Home() {
                         <p className="text-xl mb-10 leading-relaxed">
                             Welcome back! Dive into the latest posts or share your own story
                         </p>
-                        <div className="min-h-screen flex flex-col items-center justify-between bg-gradient-to-r from-blue-900 via-purple-900 to-indigo-900 p-4 relative">
+                        <div className="min-h-screen flex flex-col items-center justify-between ">
                             {/* Background Texture */}
-                            <div className="absolute inset-0 opacity-30 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                            <div className="absolute inset-0 opacity-30 pointer-events-none "></div>
 
                             {/* Main container */}
-                            <div className="relative flex-grow flex flex-col items-center justify-center p-4 z-10">
+                            <div className=" relative flex-grow flex flex-col items-center justify-center p-4 z-10">
                                 <div className="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-lg transition-all hover:shadow-xl space-y-8">
                                 <h1 className="text-4xl font-extrabold text-gray-900 text-center mb-8 tracking-tight">
                                     Fakeness Checker
@@ -345,7 +345,7 @@ function Home() {
             </main>
 
             {/* Additional content */}
-            <section className="py-20 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 w-full">
+            <section className="py-20  w-full">
                 <Container>
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-4xl font-bold mb-8 text-white">Why Choose Us?</h2>
@@ -377,7 +377,7 @@ function Home() {
             </section>
 
             {/* Feedback Button */}
-            <div className="py-10 flex justify-center w-full bg-gradient-to-b from-gray-900 to-gray-800">
+            <div className="py-10 flex justify-center w-full ">
                 <Link to="/contact">
                     <Button
                         bgColor="bg-purple-600"
