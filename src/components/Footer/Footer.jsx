@@ -10,7 +10,7 @@ function Footer() {
                     <div className="flex items-center space-x-4">
                         <Logo width="100px" />
                         <p className="text-base text-gray-100">
-                            Designed and Developed by Sahil Chhabra<br />&copy; Copyright 2023-24 | All Rights Reserved
+                            Designed and Developed by Team Shield<br />&copy; Copyright 2023-24 | All Rights Reserved
                         </p>
                     </div>
                     <div className="flex space-x-4">
