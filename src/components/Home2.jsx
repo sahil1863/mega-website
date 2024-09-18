@@ -277,13 +277,13 @@ function Home() {
                                     <h2 className="text-2xl font-bold text-gray-800 mb-4">User Data</h2>
                                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                                         {usersData.map((user) => (
-                                        <div key={user.userId} className="bg-gray-100 p-4 rounded-lg shadow-md">
-                                            <h3 className="font-semibold text-lg">{user.userId}</h3>
-                                            <p>Followers: {user.followers}</p>
-                                            <p>Following: {user.following}</p>
-                                            <p>Likes: {user.likes}</p>
-                                            <p>Fakeness Score: {user.fakeScore}%</p>
-                                            <p>Follow-to-Follower Ratio: {user.followToFollowerRatio}</p>
+                                        <div key={user.userId} className="bg-gray-100  p-4 rounded-lg shadow-md">
+                                            <h3 className="text-gray-800 font-semibold text-lg">{user.userId}</h3>
+                                            <p className="text-gray-800">Followers: {user.followers}</p>
+                                            <p className="text-gray-800">Following: {user.following}</p>
+                                            <p className="text-gray-800">Likes: {user.likes}</p>
+                                            <p className="text-gray-800">Fakeness Score: {user.fakeScore}%</p>
+                                            <p className="text-gray-800">Follow-to-Follower Ratio: {user.followToFollowerRatio}</p>
                                         </div>
                                         ))}
                                     </div>
@@ -298,44 +298,46 @@ function Home() {
                                         <Line data={lineChartData} options={lineChartOptions} />
                                     </div>
 
-                                    <div className="mt-8">
+                                    <div className="mt-8">        
                                         <h3 className="text-xl font-bold text-gray-800 mb-4">Pie Chart of Fakeness Scores</h3>
-                                        <Pie data={pieChartData} options={pieChartOptions} />
-                                    </div>
+                                        <div className="w-full max-w-xs mx-auto"> {/* Reduced size for pie chart */}
+                                            <Pie data={pieChartData} options={pieChartOptions} />
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
                                 )}
 
                                 {/* Larger Div for Fakeness Score Popup */}
                                 {showFakeScorePopup && (
-                                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70">
-                                    <div className="bg-white rounded-lg shadow-xl w-full max-w-lg p-8">
-                                    <button
-                                        className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl"
-                                        onClick={() => setShowFakeScorePopup(false)}
-                                    >
-                                        &times;
-                                    </button>
-                                    <h2 className="text-2xl font-bold text-gray-800 mb-4">Fakeness Score</h2>
-                                    <div className="flex flex-col items-center">
-                                        <div className="relative">
-                                        <CircularProgressbar
-                                            value={fakeness}
-                                            text={`${fakeness}%`}
-                                            styles={buildStyles({
-                                            pathColor: fakeness > 50 ? 'red' : 'green',
-                                            textColor: '#000',
-                                            trailColor: '#d6d6d6',
-                                            })}
-                                        />
+                                    <div className="rounded-md fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70">
+                                        <div className="bg-white rounded-md shadow-xl w-full max-w-lg p-8"> {/* Updated border-radius */}
+                                        <button
+                                            className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl"
+                                            onClick={() => setShowFakeScorePopup(false)}
+                                        >
+                                            &times;
+                                        </button>
+                                        <h2 className="text-2xl font-bold text-gray-800 mb-4">Fakeness Score</h2>
+                                        <div className="flex flex-col items-center">
+                                            <div className="relative">
+                                            <CircularProgressbar
+                                                value={fakeness}
+                                                text={`${fakeness}%`}
+                                                styles={buildStyles({
+                                                pathColor: fakeness > 50 ? 'red' : 'green',
+                                                textColor: '#000',
+                                                trailColor: '#d6d6d6',
+                                                })}
+                                            />
+                                            </div>
+                                            <p className="mt-4 text-lg">Followers: {userDetails.followers}</p>
+                                            <p className="text-lg">Following: {userDetails.following}</p>
+                                            <p className="text-lg">Follow-to-Follower Ratio: {userDetails.followToFollowerRatio}</p>
                                         </div>
-                                        <p className="mt-4 text-lg">Followers: {userDetails.followers}</p>
-                                        <p className="text-lg">Following: {userDetails.following}</p>
-                                        <p className="text-lg">Follow-to-Follower Ratio: {userDetails.followToFollowerRatio}</p>
+                                        </div>
                                     </div>
-                                    </div>
-                                </div>
-                                )}
+                                 )}
                             </div>
                         </div>
                     </div>
