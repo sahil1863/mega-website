@@ -77,13 +77,13 @@ function Home() {
                         <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
                             <div className="bg-gray-800 p-6 rounded-lg shadow-lg animate-slide-in">
                                 <img src={photo} className="w-60 h-60 rounded-full mx-auto mb-4" />
-                                <p className="text-lg">"Social-Shield ensures my online safety!"</p>
-                                <p className="mt-2 text-gray-400">- Shivam Sujjan</p>
+                                <p className="text-lg">The impact Social Shield has had in improving online security is remarkable. Its real-time detection capabilities have made our work much easier and make us protected from threats.</p>
+                                <p className="mt-2 text-gray-400">- Shivam Sujjan , Cybersecurity Expert</p>
                             </div>
                             <div className="bg-gray-800 p-6 rounded-lg shadow-lg animate-slide-in">
                                 <img src={photo2} className="w-60 h-60 rounded-full mx-auto mb-4" />
-                                <p className="text-lg">"A game changer in social media security."</p>
-                                <p className="mt-2 text-gray-400">- Shruti Kishore</p>
+                                <p className="text-lg">As a social media user, knowing that a platform like Social Shield exists gives me confidence that the government is actively protecting us from the threats posed by fake accounts.</p>
+                                <p className="mt-2 text-gray-400">- Shruti Kishore , General Public User</p>
                             </div>
                         </div>
                     </div>
