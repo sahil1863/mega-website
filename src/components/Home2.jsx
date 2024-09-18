@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { Link } from "react-router-dom";
-import { Button, Container, Logo } from "../components"; // Replace with your actual components
+import { Button, Container, Logo , Demandlogo} from "../components"; // Replace with your actual components
 import { useSelector } from "react-redux";
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import {
@@ -189,7 +189,7 @@ function Home() {
     },
   };
     return (
-        <div className=" min-h-screen text-white flex flex-col items-center bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+        <div className=" min-h-screen text-white flex flex-col items-center bg-[url('https://cdn.wallpapersafari.com/72/4/IJhNWg.jpg')]">
             {/* Main content section */}
             <main className="py-20 flex-1 w-full">
                 <Container>
@@ -207,9 +207,14 @@ function Home() {
                             {/* Main container */}
                             <div className=" relative flex-grow flex flex-col items-center justify-center p-4 z-10">
                                 <div className="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-lg transition-all hover:shadow-xl space-y-8">
+                                <div className=" flex items-center justify-center ">
+                                <div className="flex justify-center">
+                                    < Demandlogo width="100%" />
+                                </div>
                                 <h1 className="text-4xl font-extrabold text-gray-900 text-center mb-8 tracking-tight">
                                     Fakeness Checker
                                 </h1>
+                                </div>
 
                                 {/* Image Upload Section */}
                                 <div className="mb-6">
