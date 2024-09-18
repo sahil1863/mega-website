@@ -6,10 +6,10 @@ import photo2 from "./Photos/shruti.jpg";
 
 function Home() {
     return (
-        <div className="relative min-h-screen text-white flex flex-col items-center bg-cover bg-center animate-fade-in" style={{ backgroundImage: "url('https://your-library-image-url.com')" }}>
+        <div className="relative min-h-screen text-white flex flex-col items-center bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" >
             
             {/* Semi-transparent overlay for dimming effect */}
-            <div className="absolute inset-0 bg-black opacity-60 pointer-events-none"></div>
+            <div className="absolute inset-0  pointer-events-none"></div>
 
             {/* Main content section */}
             <main className="py-20 flex-1 w-full relative z-10">
@@ -35,7 +35,7 @@ function Home() {
             </main>
 
             {/* Additional content or sections */}
-            <section className="py-20 bg-gradient-to-r from-gray-800 to-gray-900 w-full relative z-10">
+            <section className="py-20  bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] w-full relative ">
                 <Container>
                     <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
                         <h2 className="text-4xl font-bold mb-6">Why Choose Us?</h2>
@@ -67,7 +67,7 @@ function Home() {
             </section>
 
             {/* Testimonials section */}
-            <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 w-full relative z-10">
+            <section className=" bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] w-full relative z-10">
                 <Container>
                     <div className="max-w-4xl mx-auto text-center animate-fade-in">
                         <h2 className="text-4xl font-bold mb-6">Testimonials</h2>
@@ -91,7 +91,7 @@ function Home() {
             </section>
 
             {/* Feedback Button */}
-            <div className="py-10 flex justify-center w-full bg-gradient-to-b from-gray-900 to-gray-800 relative z-10">
+            <div className="py-10 flex justify-center w-full  bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] relative z-10">
                 <Link to="/contact">
                     <Button
                         bgColor="bg-purple-600"

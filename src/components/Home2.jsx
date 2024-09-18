@@ -197,9 +197,7 @@ function Home() {
                         <div className="text-5xl font-extrabold mb-8 animate-fade-in tracking-wide">
                             Welcome <span className="text-teal-400">{userData?.name}</span>
                         </div>
-                        <p className="text-xl mb-10 leading-relaxed">
-                            Welcome back! Dive into the latest posts or share your own story
-                        </p>
+                        
                         <div className="min-h-screen flex flex-col items-center justify-between ">
                             {/* Background Texture */}
                             <div className="absolute inset-0 opacity-30 pointer-events-none "></div>
@@ -355,7 +353,7 @@ function Home() {
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-4xl font-bold mb-8 text-white">Why Choose Us?</h2>
                         <p className="text-lg mb-10 leading-relaxed text-gray-300">
-                            Discover why thousands of writers and readers love using our platform.
+                        Our platform ensures your social media is free from fraudulent users and bots.
                         </p>
                         <div className="flex justify-center space-x-6">
                             <Link to="/features">

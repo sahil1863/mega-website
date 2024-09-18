@@ -4,7 +4,7 @@ import Logo from '../Logo';
 
 function Footer() {
     return (
-        <footer className="bg-gray-800 border-t-2 border-t-black">
+        <footer className="  bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] w-full relative z-10">
             <div className="max-w-7xl mx-auto px-4 py-10 space-y-10">
                 <div className="flex flex-wrap justify-between items-center space-y-6 md:space-y-0">
                     <div className="flex items-center space-x-4">
