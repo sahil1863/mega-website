@@ -29,6 +29,25 @@ const getRandomUserName = () => {
   const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
   return `${randomName}${randomNum}${randomSymbol}`;
 };
+const getRandomLandscapeImage = () => {
+  const images = [
+    'https://example.com/landscape1.jpg',
+    'https://example.com/landscape2.jpg',
+    'https://example.com/landscape3.jpg',
+    // Add more image URLs
+  ];
+  return images[Math.floor(Math.random() * images.length)];
+};
+
+// Function to get random post time
+const getRandomPostTime = () => {
+  const hours = Math.floor(Math.random() * 24);
+  const minutes = Math.floor(Math.random() * 60);
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const formattedHours = hours % 12 || 12; // Convert 0 hours to 12
+  return `${formattedHours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
+};
+
 function Home() {
 
     const userData = useSelector((status) => status.auth.userData);
@@ -41,6 +60,11 @@ function Home() {
   const [showImageSearchPopup, setShowImageSearchPopup] = useState(false);
   const [userDetails, setUserDetails] = useState({});
   const [usersData, setUsersData] = useState([]);
+  const [showRandomImagePopup, setShowRandomImagePopup] = useState(false); // Popup for random image
+  const [randomImage, setRandomImage] = useState('https://th.bing.com/th/id/R.4eb01b6d1de8180fc16a7ea457df2dd0?rik=mDmVmiPWKjG19Q&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f102787-nature-mountain-river-landscape.jpg&ehk=tKQDONLRX3EXEvzzdRuXB5UBE3a0IgFKug46zeMojOg%3d&risl=&pid=ImgRaw&r=0');
+  const [randomPostTime, setRandomPostTime] = useState('');
+  const [postLink, setPostLink] = useState(''); // New input for Post Link
+  const [selectedPlatform, setSelectedPlatform] = useState('twitter'); 
 
   const handleCheckFakeness = (e) => {
     e.preventDefault();
@@ -54,6 +78,24 @@ function Home() {
     setUserDetails({ followers, following, followToFollowerRatio });
     setFakeness(randomFakeness);
     setShowFakeScorePopup(true);
+  };
+  const handleSubmitPost = (e) => {
+    e.preventDefault();
+    const image = getRandomLandscapeImage();
+    const postTime = getRandomPostTime();
+    setRandomImage(image);
+    setRandomPostTime(postTime);
+    setShowRandomImagePopup(true); // Show the popup with random image
+  };
+
+  // Function to handle image download
+  const handleDownloadImage = () => {
+    const link = document.createElement('a');
+    link.href = randomImage;
+    link.download = 'landscape_image.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleImageSearch = () => {
@@ -197,7 +239,69 @@ function Home() {
                         <div className="text-5xl font-extrabold mb-8 animate-fade-in tracking-wide">
                             Welcome <span className="text-teal-400">{userData?.name}</span>
                         </div>
-                        
+                       
+                        {/* Form Section */}
+                        <form onSubmit={handleSubmitPost} className="space-y-6">
+                          <div>
+                            <label className="block text-lg text-gray-700 font-semibold mb-2 text-white">Post Link</label>
+                            <input
+                              type="text"
+                              className="w-full px-4 py-3 border-2 text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+                              value={postLink}
+                              onChange={(e) => setPostLink(e.target.value)}
+                              required
+                            />
+                          </div>
+
+                          <div>
+                            <label className="block text-lg text-gray-700 font-semibold mb-2 text-white">Platform</label>
+                            <select
+                              value={selectedPlatform}
+                              onChange={(e) => setSelectedPlatform(e.target.value)}
+                              className="w-full px-4 py-3 border-2 text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+                            >
+                              <option value="twitter">Twitter</option>
+                              <option value="instagram">Instagram</option>
+                              <option value="facebook">Facebook</option>
+                            </select>
+                          </div>
+
+                          <button
+                            type="submit"
+                            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-bold text-lg tracking-wide transform hover:scale-105 hover:shadow-md transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                          >
+                            Submit
+                          </button>
+                        </form>
+
+            {/* Popup for random image and post time */}
+            {showRandomImagePopup && (
+              <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70">
+                <div className="bg-white rounded-lg shadow-xl w-full max-w-lg p-8 relative">
+                  <button
+                    className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl"
+                    onClick={() => setShowRandomImagePopup(false)}
+                  >
+                    &times;
+                  </button>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-4">Random Landscape Image</h2>
+                  <img src="https://th.bing.com/th/id/R.4eb01b6d1de8180fc16a7ea457df2dd0?rik=mDmVmiPWKjG19Q&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f102787-nature-mountain-river-landscape.jpg&ehk=tKQDONLRX3EXEvzzdRuXB5UBE3a0IgFKug46zeMojOg%3d&risl=&pid=ImgRaw&r=0" alt="Random Landscape" className="w-full h-auto mb-4 rounded-md" />
+                  <p className="text-lg text-black">Posted at: {"12/03/2023"}</p>
+                  
+                  <p className="mt-4 text-lg text-black">Followers: "122"</p>
+                  <p className="text-lg text-black">Following: "1435"</p>
+                  <p className="text-lg text-black">Follow-to-Follower Ratio: "11.12"</p>
+                                      
+                  <button
+                    onClick={handleDownloadImage}
+                    className="mt-4 bg-gradient-to-r from-green-600 to-teal-600 text-white py-2 px-6 rounded-lg font-bold tracking-wide transform hover:scale-105 hover:shadow-md transition-transform duration-300"
+                  >
+                    Download Image
+                  </button>
+                </div>
+              </div>
+            )}
+          
                         <div className="min-h-screen flex flex-col items-center justify-between ">
                             {/* Background Texture */}
                             <div className="absolute inset-0 opacity-30 pointer-events-none "></div>
@@ -339,14 +443,15 @@ function Home() {
                                             <p className="text-lg">Follow-to-Follower Ratio: {userDetails.followToFollowerRatio}</p>
                                         </div>
                                         </div>
+            
                                     </div>
                                  )}
+                                        
                             </div>
                         </div>
                     </div>
                 </Container>
             </main>
-
             {/* Additional content */}
             <section className="py-20  w-full">
                 <Container>
